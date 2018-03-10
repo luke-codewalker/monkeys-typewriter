@@ -1,5 +1,5 @@
 class DNA {
-    constructor(length) {
+    constructor(length = 0) {
         this.genes = [];
         for (let i = 0; i < length; i++) {
             this.genes[i] = randomChar();
@@ -12,9 +12,7 @@ class DNA {
 
     static crossover(parentA, parentB) {
         const slicePoint = Math.floor(random(parentA.genes.length));
-        const child = new DNA(parentA.genes.length);
-        child.genes = parentA.genes.slice(0, slicePoint).concat(parentB.genes.slice(slicePoint));
-        return child;
+        return parentA.genes.slice(0, slicePoint).concat(parentB.genes.slice(slicePoint));
     }
 
     static mutate(genes, rate) {
@@ -30,7 +28,7 @@ class DNA {
     fitness(target) {
         const score = this.genes.reduce((score, geneChar, i) => {
             if (geneChar === target[i]) {
-                return score++;
+                return score += 1;
             } else {
                 return score;
             }
