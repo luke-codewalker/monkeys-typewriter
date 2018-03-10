@@ -1,12 +1,11 @@
 class Population {
-    constructor(target, mutationRate, populationSize) {
+    constructor(target, populationSize, mutationRate) {
         this.target = target;
         this.mutationRate = mutationRate;
         this.populationSize = populationSize;
         this.population = [];
         this.matingPool = [];
         this.generation = 0;
-        this.done = false;
         this.bestPhrase = '';
         this.averageFitness = 0;
     }
@@ -35,13 +34,14 @@ class Population {
             }
         }
 
-        this.bestPhrase = this.population[i].phrase;
+        this.bestPhrase = this.population[recordIndex].phrase;
         this.averageFitness = fitnessSum / this.population.length;
     }
 
     // One complete generation change
     generate() {
         // Construct a mating pool from the current population
+        this.matingPool = [];
         for (const member of this.population) {
             const share = member.fitness(this.target) * 100;
             for (let i = 0; i < share; i++) {
