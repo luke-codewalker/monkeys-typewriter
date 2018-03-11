@@ -29,6 +29,8 @@ const evolve = (population) => {
 }
 
 select('button').addEventListener('click', () => {
+    select('.best-phrase').classList.remove('done');
+
     const monkeys = new Population(target, populationSize, mutationRate);
     monkeys.init();
     evolve(monkeys)
