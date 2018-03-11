@@ -88,3 +88,7 @@ button {
     padding: 0.5rem;
     cursor: pointer;
 }
+
+.config {
+    border-bottom: 1px solid #333;
+}

@@ -17,30 +17,34 @@
     <section class="typewriter monospace"></section>
 
     <main>
-        <h1>Monkey's Typewriter</h1>
+        <h1>Monkeys with typewriters</h1>
         <noscript>This page needs Javascript to function! Please enable it.</noscript>
-        <p>Target phrase:
-            <span class="target-phrase monospace"></span>
-        </p>
-
-        <p>Best phrase:
-            <span class="best-phrase monospace"></span>
-        </p>
-        <p>Average Fitness:
-            <span class="avg-fitness"></span>
-        </p>
-
-        <p>Generation:
-            <span class="generation"></span>
-        </p>
-
-        <p>Population size:
-            <span class="population-size"></span>
-        </p>
-
-        <p>Mutation rate:
-            <span class="mutation-rate"></span>
-        </p>
+        <section class="config">
+            <p title="The phrase that the monkeys should ideally type">Target phrase:
+                <span class="target-phrase monospace"></span>
+            </p>
+    
+            <p title="How many monkeys are trying to type the target phrase at once">Population size:
+                <span class="population-size"></span>
+            </p>
+    
+            <p title="The probability that a new monkey's genes will be altered after it combined the genes from it's parents">Mutation rate:
+                <span class="mutation-rate"></span>
+            </p>
+        </section>
+        
+        <section class="metrics">
+            <p title="The closest the monkeys have gotten to the target phrase">Best phrase:
+                <span class="best-phrase monospace"></span>
+            </p>
+            <p title="Average percentage of the target phrase the monkeys get correct">Average Fitness:
+                <span class="avg-fitness"></span>
+            </p>
+    
+            <p title="The current generation of monkeys">Generation:
+                <span class="generation"></span>
+            </p>
+        </section>
 
         <button>Let them smash the keys</button>
     </main>
