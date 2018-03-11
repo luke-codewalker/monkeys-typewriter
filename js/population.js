@@ -3,7 +3,7 @@ class Population {
         this.target = target;
         this.mutationRate = mutationRate;
         this.populationSize = populationSize;
-        this.population = [];
+        this.members = [];
         this.matingPool = [];
         this.generation = 0;
         this.bestPhrase = '';
@@ -13,7 +13,7 @@ class Population {
     // Set up a fresh population
     init() {
         for (let i = 0; i < this.populationSize; i++) {
-            this.population.push(new DNA(this.target.length))
+            this.members.push(new DNA(this.target.length))
         }
     }
 
@@ -23,8 +23,8 @@ class Population {
         let recordFitness = 0;
         let recordIndex = 0;
         let fitnessSum = 0;
-        for (let i = 0; i < this.population.length; i++) {
-            const fitness = this.population[i].fitness(this.target);
+        for (let i = 0; i < this.members.length; i++) {
+            const fitness = this.members[i].fitness(this.target);
             // add to overall sum
             fitnessSum += fitness;
             // check if it beats the record
@@ -34,15 +34,15 @@ class Population {
             }
         }
 
-        this.bestPhrase = this.population[recordIndex].phrase;
-        this.averageFitness = fitnessSum / this.population.length;
+        this.bestPhrase = this.members[recordIndex].phrase;
+        this.averageFitness = fitnessSum / this.members.length;
     }
 
     // One complete generation change
     generate() {
         // Construct a mating pool from the current population
         this.matingPool = [];
-        for (const member of this.population) {
+        for (const member of this.members) {
             const share = member.fitness(this.target) * 100;
             for (let i = 0; i < share; i++) {
                 this.matingPool.push(member);
@@ -51,12 +51,12 @@ class Population {
 
         // Replace every member in the population with a new child made by drawing 
         // parents from the mating pool
-        for (let i = 0; i < this.population.length; i++) {
+        for (let i = 0; i < this.members.length; i++) {
             const parentA = this.matingPool[Math.floor(random(this.matingPool.length))];
             const parentB = this.matingPool[Math.floor(random(this.matingPool.length))];
             const child = new DNA();
             child.genes = DNA.mutate(DNA.crossover(parentA, parentB), this.mutationRate);
-            this.population[i] = child;
+            this.members[i] = child;
         }
 
         // increase the generation count once done
