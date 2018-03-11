@@ -23,6 +23,7 @@ main {
     position: absolute;
     top: 10vh;
     left: 10vw;
+    max-width: 30rem;
 
     padding: 1rem;
 
@@ -94,7 +95,7 @@ button {
     cursor: pointer;
 }
 
-.config {
+section {
     border-bottom: 1px solid #333;
 }
 
@@ -115,11 +116,14 @@ input[type="text"] {
     text-align: center;
 }
 
-a {
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    
+a { 
     text-decoration: none;
     color: #333;
+    font-size: 1rem;
+}
+
+.info {
+    color: #666;
+    font-size: 0.85rem;
+    margin-bottom: 0;
 }
