@@ -1,4 +1,4 @@
-const target = 'To be or not to be';
+const target = 'Lorem ipsum sunt dolores';
 const populationSize = 1500;
 const mutationRate = 0.01;
 
