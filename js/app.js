@@ -1,5 +1,4 @@
 const evolve = (population, id) => {
-    console.log(id);
     // if evolution process is not the current one we can quit right away
     if (id !== evolutionId) return;
 
