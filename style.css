@@ -26,12 +26,14 @@ main {
 
     padding: 1rem;
 
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.7);
     border: 1px solid #333;
 }
 
 .monospace {
     font-family: 'Lucida Console', monospace;
+    color: #333;
+    font-size: 1rem;
     padding: 0.5rem;
     border-radius: 2px;
 }
@@ -92,4 +94,21 @@ button {
 
 .config {
     border-bottom: 1px solid #333;
+}
+
+input[type="text"] {
+    border: none;
+    border-bottom: 1px solid #aaa;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.small {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    color: #333;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    border-bottom: 1px solid #aaa;
+    width: 4rem;
+    text-align: center;
 }

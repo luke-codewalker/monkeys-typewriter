@@ -21,15 +21,15 @@
         <noscript>This page needs Javascript to function! Please enable it.</noscript>
         <section class="config">
             <p title="The phrase that the monkeys should ideally type">Target phrase:
-                <span class="target-phrase monospace"></span>
+                <input type="text" class="target-phrase monospace" size="24" value="Lorem ipsum sunt dolores">
             </p>
     
             <p title="How many monkeys are trying to type the target phrase at once">Population size:
-                <span class="population-size"></span>
+                <input type="number" min="100" value="150" max="999" class="population-size small">
             </p>
     
             <p title="The probability that a new monkey's genes will be altered after it combined the genes from it's parents">Mutation rate:
-                <span class="mutation-rate"></span>
+                <input type="number" min="1" max="99" value="1" class="mutation-rate small"> %
             </p>
         </section>
         

@@ -1,11 +1,3 @@
-const target = 'Lorem ipsum sunt dolores';
-const populationSize = 1500;
-const mutationRate = 0.01;
-
-select('.target-phrase').innerText = target;
-select('.population-size').innerText = populationSize;
-select('.mutation-rate').innerText = `${Math.floor(mutationRate * 100)} %`;
-
 const evolve = (population) => {
     // evaluate if not done request another evolution
     population.evaluate();
@@ -18,7 +10,7 @@ const evolve = (population) => {
         return allPhrases += `<span>${member.phrase}</span>`;
     }, ``);
 
-    if (population.bestPhrase !== target) {
+    if (population.bestPhrase !== population.target) {
         select('.avg-fitness').innerText = `${Math.floor(population.averageFitness * 100)} %`;
         select('.generation').innerText = population.generation;
         population.generate();
@@ -31,7 +23,18 @@ const evolve = (population) => {
 select('button').addEventListener('click', () => {
     select('.best-phrase').classList.remove('done');
 
-    const monkeys = new Population(target, populationSize, mutationRate);
-    monkeys.init();
-    evolve(monkeys)
+    const target = select('.target-phrase').value;
+    const populationSize = select('.population-size').value;
+    const mutationRate = select('.mutation-rate').value;
+
+    if(target.length > 0 &&
+    populationSize >= 100 &&
+    populationSize <= 999 &&
+    mutationRate >= 1 &&
+    mutationRate <= 99) {
+        const monkeys = new Population(target, populationSize, mutationRate / 100);
+        monkeys.init();
+        evolve(monkeys);
+    } 
 });
+
