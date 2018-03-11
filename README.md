@@ -10,7 +10,7 @@ This [page](https://luke-codewalker.github.io/monkeys-typewriter/) demonstrates 
 
 
 ## Using the page
-You can play around with the **target phrase**, the **population size** and the **mutation rate** to influence how the population behaves. By pressing `Let them smash the keys` you start an evolution with the current parameters. If nothing happend check if you have entered valid parameters.
+You can play around with the **target phrase**, the **population size** and the **mutation rate** to influence how the population behaves. By pressing `Let them smash the keys` you start an evolution with the current parameters. If nothing happens check if you've entered valid parameters.
 
 Depending on your input the evolution will take more or less time. Longer phrases need more time, as well as smaller populations. An increased mutation rate can help to arrive at the target phrase but if it's too high, the monkeys will change too drastically with every new generation and never progress towards the target phrase.
 
@@ -20,9 +20,9 @@ If it takes reaaaally long without ever reaching the target you might have hit a
 ## Genetic Algorithm
 To get an in-depth understanding of genetic algorithms in programming I can recommend Daniel Shiffman's [video series](https://www.youtube.com/watch?v=9zfeTw-uFCw&list=PLRqwX-V7Uu6bJM3VgzjNV5YxVxUwzALHV) on them. The basic idea is to take concepts from natural evolution like *fitness*, *selection*, *crossover* and *mutation* and apply them in a programm. This way some problems can be solved more efficiently than for example with brute force guessing.
 
-In this example the goal for the programm is to correctly guess a target string you give it e.g. `Lorem ipsum sunt dolores`. This would take a very long time if we just depended on chance and let the programm guess a completely random sequence of caracters every iteration.
+In this example the goal for the programm is to correctly guess a **target phrase** you give it e.g. `Lorem ipsum sunt dolores`. This would take a very long time if we just depended on chance and let the programm guess a completely random sequence of caracters every iteration.
 
-We can solve this problem with a genetic algorithm! Here's how it's implemented in this example:
+We can solve this problem with a **genetic algorithm**! Here's how it's implemented in this example:
 
  1. Make a *population* in which every member can type a phrase the same length of the target phrase. The phrase is determined by the individual member's genes. These are just a random sequence of characters in the start.
 
